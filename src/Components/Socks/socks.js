@@ -150,7 +150,7 @@ export default class Socks extends Component {
     itemChosen(item_url, item_name, item_description, item_price, item_link, item_specs) {
 
         window.scroll({
-            top: 300, 
+            top: 350, 
             left: 0, 
             behavior: 'smooth' 
           });

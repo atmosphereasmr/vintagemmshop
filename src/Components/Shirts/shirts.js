@@ -151,14 +151,15 @@ itemHoverOff(e) {
 
 itemChosen(item_url, item_name, item_description, item_price, item_link, item_specs) {
 
-    window.scroll({
-        top: 300, 
-        left: 0, 
-        behavior: 'smooth' 
-      });
+    // window.scroll({
+    //     top: 350, 
+    //     left: 0, 
+    //     behavior: 'smooth' 
+    //   });
 
     const items = document.getElementsByName("item-tag")
     const chosenItem = document.getElementById("chosen-item")
+    chosenItem.scrollIntoView()
     const chosenDescription = document.getElementById("chosen-description")
     const chosenBuyBox = document.getElementById("chosen-buy-box")
     const goBackButton = document.getElementById('go-back-button')
