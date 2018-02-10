@@ -4,6 +4,7 @@ import '../Shirts/shirts.css'
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
 import { choose, price, image } from '../../reducer'
+import Scroll from 'scroll-js'
 
 
 const shirts = require('../../Data/vinyl.js')
@@ -158,11 +159,11 @@ itemHoverOff(e) {
 
 itemChosen(item_url, item_name, item_description, item_price, item_link, item_specs) {
 
-    window.scroll({
-        top: 350, 
-        left: 0, 
-        behavior: 'smooth' 
-      });
+    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
+        var scroll = new Scroll(document.body);
+        scroll.to(0, 100, {easing: 'easeInOutCubic', duration: 0}).then(function () {
+           console.log('reeeee')
+        });
 
     const items = document.getElementsByName("item-tag")
     const chosenItem = document.getElementById("chosen-item")

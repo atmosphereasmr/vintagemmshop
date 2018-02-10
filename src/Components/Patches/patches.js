@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import '../Shirts/shirts.css'
 import { Link } from 'react-router-dom'
+import Scroll from 'scroll-js'
 
 
 const shirts = require('../../Data/patches.js')
@@ -149,11 +150,11 @@ itemHoverOff(e) {
 
 itemChosen(item_url, item_name, item_description, item_price, item_link, item_specs) {
 
-    window.scroll({
-        top: 350, 
-        left: 0, 
-        behavior: 'smooth' 
-      });
+    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
+        var scroll = new Scroll(document.body);
+        scroll.to(0, 100, {easing: 'easeInOutCubic', duration: 0}).then(function () {
+           console.log('reeeee')
+        });
 
       
 
