@@ -4,6 +4,7 @@ import '../Shirts/shirts.css'
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
 import { choose, price, image } from '../../reducer'
+import Scroll from 'scroll-js'
 
 
 const shirts = require('../../Data/data.js')
@@ -42,6 +43,7 @@ class Shirts extends Component {
     }
 
     componentDidMount() {
+
         this.setState({ items: shirts.data, itemAmount: shirts.data.length }, () => {
             console.log(this.state)
             const leftBar = document.getElementById('left-bar')
@@ -151,11 +153,14 @@ itemHoverOff(e) {
 
 itemChosen(item_url, item_name, item_description, item_price, item_link, item_specs) {
 
-    // window.scroll({
-    //     top: 350, 
-    //     left: 0, 
-    //     behavior: 'smooth' 
-    //   });
+    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
+
+    var scroll = new Scroll(document.body);
+    scroll.to(0, 250, {easing: 'easeInOutCubic', duration: 0}).then(function () {
+       console.log('reeeee')
+    });
+
+}
 
     const items = document.getElementsByName("item-tag")
     const chosenItem = document.getElementById("chosen-item")
@@ -190,14 +195,15 @@ itemChosen(item_url, item_name, item_description, item_price, item_link, item_sp
     const menu = document.getElementById('left-container')
     const rightBar = document.getElementById('right-bar')
     if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
-    leftBar.style = `height: ${containerHeight}px`
-    menu.style = `height: ${containerHeight}px`
-    rightBar.style = `height: ${containerHeight}px`
+        leftBar.style = "height: 1200px"
+        menu.style = "height: 1200px"
+        rightBar.style = "height: 1200px"
+        rightContainer.style = "height: 1200px"
     } else if (window.innerWidth >= 2560) {
         leftBar.style = "height: 1300px"
         menu.style = "height: 1300px"
         rightBar.style = "height: 1300px"
-    } else if (window.innerWidth >= 425 && window.innerWidth < 2560) {
+    } else if (window.innerWidth < 2560) {
         leftBar.style = "height: 800px"
         menu.style = "height: 800px"
         rightBar.style = "height: 800px"
