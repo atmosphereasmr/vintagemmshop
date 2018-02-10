@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+
+.advert-container {
+    width: 100%;
+    height: 1000px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.advert {
+    width: 35%;
+    height: 60%;
+    background: linear-gradient(white, #521219, black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column;
+    position: absolute;
+}
+
+.advert-banner {
+    width: 100%;
+    height: 5%;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 25px;
+}
+
+.advert-price {
+    width: 25%;
+    height: 10%;
+    background-color: red;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border-bottom-right-radius: 25px;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.advert-pic {
+    width: 80%;
+    height: 80%;
+    border-radius: 25px;
+    background-size: contain;
+    background-position: center;
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+.advert-text {
+    width: 80%;
+    height: 10%;
+    background-color: blue;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #521219;
+    border-radius: 25px;
+    color: white;
+    font-size: 25px;
+}

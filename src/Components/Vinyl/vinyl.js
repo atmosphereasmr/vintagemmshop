@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import '../Shirts/shirts.css'
 import { Link } from 'react-router-dom'
+import { connect } from "react-redux";
+import { choose, price, image } from '../../reducer'
 
 
 const shirts = require('../../Data/vinyl.js')
 
-export default class Vinyl extends Component {
+class Vinyl extends Component {
 
     constructor(props) {
         super(props)
@@ -156,6 +158,12 @@ itemHoverOff(e) {
 
 itemChosen(item_url, item_name, item_description, item_price, item_link, item_specs) {
 
+    window.scroll({
+        top: 300, 
+        left: 0, 
+        behavior: 'smooth' 
+      });
+
     const items = document.getElementsByName("item-tag")
     const chosenItem = document.getElementById("chosen-item")
     const chosenDescription = document.getElementById("chosen-description")
@@ -171,7 +179,10 @@ itemChosen(item_url, item_name, item_description, item_price, item_link, item_sp
     chosenItem.style = `background-image: url(${item_url})`
     chosenDescription.className = "chosen-description-on"
     chosenBuyBox.className = "chosen-buy-box-on"
-    this.setState({ chosen_name: item_name, chosen_description: item_description, chosen_price: item_price, chosen_link: item_link, chosen_specs: item_specs })
+    this.setState({ chosen_name: item_name, chosen_description: item_description, chosen_price: item_price, chosen_link: item_link, chosen_specs: item_specs },
+        () => {this.props.choose(item_name) 
+           this.props.price(item_price)
+           this.props.image(item_url)})
     goBackButton.className = "go-back-button-on"
     goBackButton2.className="go-back-button-2-on"
     rightContainer.style = "height: 1046px"
@@ -391,3 +402,11 @@ render() {
     )
 }
 }
+
+function MapStateToProps(state) {
+    return (
+        state
+    )
+}
+
+export default connect(MapStateToProps, { choose, price, image })(Vinyl)
