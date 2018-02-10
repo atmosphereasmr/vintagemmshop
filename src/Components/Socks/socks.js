@@ -154,7 +154,7 @@ export default class Socks extends Component {
             var scroll = new Scroll(document.body);
             scroll.to(0, 100, {easing: 'easeInOutCubic', duration: 0}).then(function () {
                console.log('reeeee')
-            });
+            })}
 
         const items = document.getElementsByName("item-tag")
         const chosenItem = document.getElementById("chosen-item")
