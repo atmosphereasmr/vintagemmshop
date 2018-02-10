@@ -155,6 +155,8 @@ itemChosen(item_url, item_name, item_description, item_price, item_link, item_sp
         behavior: 'smooth' 
       });
 
+      
+
     const items = document.getElementsByName("item-tag")
     const chosenItem = document.getElementById("chosen-item")
     const chosenDescription = document.getElementById("chosen-description")

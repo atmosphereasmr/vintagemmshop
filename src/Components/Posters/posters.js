@@ -149,11 +149,16 @@ itemHoverOff(e) {
 
 itemChosen(item_url, item_name, item_description, item_price, item_link, item_specs) {
 
-    window.scroll({
-        top: 300, 
-        left: 0, 
-        behavior: 'smooth' 
-      });
+    window.addEventListener("load", function() {
+        setTimeout(function() {
+            var scrollPos = window.pageYOffset || 
+                document.documentElement.scrollTop || 
+                document.body.scrollTop;
+            if (scrollPos < 1) {
+                window.scrollTo(0,200);
+            }
+        }, 0);
+    });
 
     const items = document.getElementsByName("item-tag")
     const chosenItem = document.getElementById("chosen-item")
