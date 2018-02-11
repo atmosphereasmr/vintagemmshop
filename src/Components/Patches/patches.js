@@ -45,7 +45,7 @@ export default class Patches extends Component {
         this.setState({ items: shirts.data, itemAmount: shirts.data.length }, () => {
             console.log(this.state)
 
-            if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
+            if (window.innerWidth <= 425) {
                 console.log('ayeeeee son')
                 const store = document.getElementById('right-container')
                 store.style = "height: 800px"
