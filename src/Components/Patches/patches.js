@@ -191,11 +191,11 @@ itemChosen(item_url, item_name, item_description, item_price, item_link, item_sp
     const containerHeight = document.getElementById('right-container').clientHeight
     const menu = document.getElementById('left-container')
     const rightBar = document.getElementById('right-bar')
-    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
-    leftBar.style = `height: ${containerHeight}px`
-    menu.style = `height: ${containerHeight}px`
-    rightBar.style = `height: ${containerHeight}px`
-    } else if (window.innerWidth >= 2560) {
+    if (window.innerWidth <= 425) {
+        const home = document.getElementById('home-container')
+        home.style = "height: 900px"
+    }
+     else if (window.innerWidth >= 2560) {
         leftBar.style = "height: 1300px"
         menu.style = "height: 1300px"
         rightBar.style = "height: 1300px"

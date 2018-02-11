@@ -192,9 +192,9 @@ itemChosen(item_url, item_name, item_description, item_price, item_link, item_sp
     const containerHeight = document.getElementById('right-container').clientHeight
     const menu = document.getElementById('left-container')
     const rightBar = document.getElementById('right-bar')
-    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
+    if (window.innerWidth <= 425) {
         const home = document.getElementById('home-container')
-        home.style = "height: 950px"
+        home.style = "height: 900px"
     }
      if (window.innerWidth >= 2560) {
         leftBar.style = "height: 1300px"

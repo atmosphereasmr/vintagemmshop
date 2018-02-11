@@ -738,7 +738,7 @@
     .price-container-on {display: none;}
     .title-container-on {display: none;}
     .chosen-item-on {width: 65%; height: 30%; top: 37.5%; left: 15%;}
-    .chosen-description-on {width: 65%; top: 74%; left: 16.5%}
+    .chosen-description-on {width: 100%; top: 74%; left: 0%}
     .chosen-header {font-size: 25px;}
     .chosen-buy-button {width: 150%; height: 25%; position: absolute; top: 70%; left: 55%;}
     .go-back-button-on {width: 40%; height: 5%; position: absolute; top: 129%; left: 28%;}
