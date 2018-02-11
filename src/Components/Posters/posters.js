@@ -41,18 +41,27 @@ export default class Posters extends Component {
     }
 
     componentDidMount() {
+
         this.setState({ items: shirts.data, itemAmount: shirts.data.length }, () => {
             console.log(this.state)
-            const leftBar = document.getElementById('left-bar')
-            const containerHeight = document.getElementById('right-container').clientHeight
-            const menu = document.getElementById('left-container')
-            const rightBar = document.getElementById('right-bar')
-            leftBar.style = `height: ${containerHeight}px`
-            menu.style = `height: ${containerHeight}px`
-            rightBar.style = `height: ${containerHeight}px`
-        }
+
+            if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
+                console.log('ayeeeee son')
+                const store = document.getElementById('right-container')
+                store.style = "height: 1300px"
+                } else {
+                    const leftBar = document.getElementById('left-bar')
+                    const containerHeight = document.getElementById('right-container').clientHeight
+                    const menu = document.getElementById('left-container')
+                    const rightBar = document.getElementById('right-bar')
+                    leftBar.style = `height: ${containerHeight}px`
+                    menu.style = `height: ${containerHeight}px`
+                    rightBar.style = `height: ${containerHeight}px`
+                }
+            }
+            
         )
-    }
+        }
 
 nameInput(e) {
     this.setState({ name_input: e }, () => console.log(this.state.name_input))
@@ -152,7 +161,7 @@ itemChosen(item_url, item_name, item_description, item_price, item_link, item_sp
 
     if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
         var scroll = new Scroll(document.body);
-        scroll.to(0, 100, {easing: 'easeInOutCubic', duration: 0}).then(function () {
+        scroll.to(0, 0, {easing: 'easeInOutCubic', duration: 0}).then(function () {
            console.log('reeeee')
         })}
 

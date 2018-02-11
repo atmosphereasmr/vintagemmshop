@@ -46,16 +46,24 @@ class Shirts extends Component {
 
         this.setState({ items: shirts.data, itemAmount: shirts.data.length }, () => {
             console.log(this.state)
-            const leftBar = document.getElementById('left-bar')
-            const containerHeight = document.getElementById('right-container').clientHeight
-            const menu = document.getElementById('left-container')
-            const rightBar = document.getElementById('right-bar')
-            leftBar.style = `height: ${containerHeight}px`
-            menu.style = `height: ${containerHeight}px`
-            rightBar.style = `height: ${containerHeight}px`
-        }
+
+            if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
+                console.log('ayeeeee son')
+                const store = document.getElementById('right-container')
+                store.style = "height: 800px"
+                } else {
+                    const leftBar = document.getElementById('left-bar')
+                    const containerHeight = document.getElementById('right-container').clientHeight
+                    const menu = document.getElementById('left-container')
+                    const rightBar = document.getElementById('right-bar')
+                    leftBar.style = `height: ${containerHeight}px`
+                    menu.style = `height: ${containerHeight}px`
+                    rightBar.style = `height: ${containerHeight}px`
+                }
+            }
+            
         )
-    }
+        }
 
 nameInput(e) {
     this.setState({ name_input: e }, () => console.log(this.state.name_input))
@@ -153,13 +161,6 @@ itemHoverOff(e) {
 
 itemChosen(item_url, item_name, item_description, item_price, item_link, item_specs) {
 
-    if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
-    var scroll = new Scroll(document.body);
-    scroll.to(0, 100, {easing: 'easeInOutCubic', duration: 0}).then(function () {
-       console.log('reeeee')
-    });
-}
-
     const items = document.getElementsByName("item-tag")
     const chosenItem = document.getElementById("chosen-item")
     const chosenDescription = document.getElementById("chosen-description")
@@ -192,11 +193,10 @@ itemChosen(item_url, item_name, item_description, item_price, item_link, item_sp
     const menu = document.getElementById('left-container')
     const rightBar = document.getElementById('right-bar')
     if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
-        leftBar.style = "height: 1000px"
-        menu.style = "height: 1000px"
-        rightBar.style = "height: 1000px"
-        rightContainer.style = "height: 1000px"
-    } else if (window.innerWidth >= 2560) {
+        const home = document.getElementById('home-container')
+        home.style = "height: 950px"
+    }
+     if (window.innerWidth >= 2560) {
         leftBar.style = "height: 1300px"
         menu.style = "height: 1300px"
         rightBar.style = "height: 1300px"
@@ -235,19 +235,20 @@ goBack() {
     const containerHeight = document.getElementById('right-container').clientHeight
     const menu = document.getElementById('left-container')
     const rightBar = document.getElementById('right-bar')
-    if (window.innerWidth <= 320 || window.innerWidth <= 375 || window.innerWidth <= 425) {
-    leftBar.style = "height: 3100px"
-    menu.style = "height: 3100px"
-    rightBar.style = "height: 3100px"
-    } else if (window.innerWidth >= 425 && window.innerWidth < 2560) {
-        leftBar.style = "height: 1046px"
-        menu.style = "height: 1046px"
-        rightBar.style = "height: 1046px"
-    } else if (window.innerWidth >= 2560) {
-        leftBar.style = "height: 1100px"
-        menu.style = "height: 1100px"
-        rightBar.style = "height: 1100px"
-    }
+    // if (window.innerWidth <= 320 || window.innerWidth <= 375 || window.innerWidth <= 425) {
+    // leftBar.style = "height: 3100px"
+    // menu.style = "height: 3100px"
+    // rightBar.style = "height: 3100px"
+    // }
+    //  if (window.innerWidth >= 425 && window.innerWidth < 2560) {
+    //     leftBar.style = "height: 1046px"
+    //     menu.style = "height: 1046px"
+    //     rightBar.style = "height: 1046px"
+    // } else if (window.innerWidth >= 2560) {
+    //     leftBar.style = "height: 1100px"
+    //     menu.style = "height: 1100px"
+    //     rightBar.style = "height: 1100px"
+    // }
 }
 
 cartOn() {

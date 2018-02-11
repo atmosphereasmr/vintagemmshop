@@ -43,25 +43,27 @@ class Vinyl extends Component {
     }
 
     componentDidMount() {
+
         this.setState({ items: shirts.data, itemAmount: shirts.data.length }, () => {
             console.log(this.state)
-            const leftBar = document.getElementById('left-bar')
-            const containerHeight = document.getElementById('right-container').clientHeight
-            const menu = document.getElementById('left-container')
-            const rightBar = document.getElementById('right-bar')
-            const rightContainer = document.getElementById('right-container')
-            leftBar.style = `height: ${containerHeight}px`
-            menu.style = `height: ${containerHeight}px`
-            rightBar.style = `height: ${containerHeight}px`
-            if (window.innerWidth >= 2560) {
-                leftBar.style = "height: 1100px"
-                menu.style = "height: 1100px"
-                rightBar.style = "height: 1100px"
-                rightContainer.style = "height: 509px"
+
+            if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
+                console.log('ayeeeee son')
+                const store = document.getElementById('right-container')
+                store.style = "height: 550px"
+                } else {
+                    const leftBar = document.getElementById('left-bar')
+                    const containerHeight = document.getElementById('right-container').clientHeight
+                    const menu = document.getElementById('left-container')
+                    const rightBar = document.getElementById('right-bar')
+                    leftBar.style = `height: ${containerHeight}px`
+                    menu.style = `height: ${containerHeight}px`
+                    rightBar.style = `height: ${containerHeight}px`
+                }
             }
-        }
+            
         )
-    }
+        }
 
 nameInput(e) {
     this.setState({ name_input: e }, () => console.log(this.state.name_input))
@@ -214,42 +216,7 @@ buyClick() {
 }
 
 goBack() {
-    const chosenItem = document.getElementById("chosen-item")
-    const chosenDescription = document.getElementById("chosen-description")
-    const chosenBuyBox = document.getElementById("chosen-buy-box")
-    const goBackButton = document.getElementById('go-back-button')
-    const items = document.getElementsByName("item-tag")
-    const rightContainer = document.getElementById('right-container')
-    const goBackButton2 = document.getElementById('go-back-button-2')
-
-    chosenItem.className = "chosen-item-off"
-    chosenDescription.className = "chosen-description-off"
-    chosenBuyBox.className = "chosen-buy-box-off"
-    goBackButton.className = "go-back-button-off"
-    goBackButton2.className = "go-back-button-off"
-    for (var i = 0; i < items.length; i++) {
-        items[i].className = "item-1"
-    }
-
-    const leftBar = document.getElementById('left-bar')
-    const containerHeight = document.getElementById('right-container').clientHeight
-    const menu = document.getElementById('left-container')
-    const rightBar = document.getElementById('right-bar')
-    if (window.innerWidth <= 320 || window.innerWidth <= 375 || window.innerWidth <= 425) {
-    leftBar.style = "height: 1300px"
-    menu.style = "height: 1300px"
-    rightBar.style = "height: 1300px"
-    } else if (window.innerWidth >= 425 && window.innerWidth < 2560) {
-        leftBar.style = "height: 509px"
-        menu.style = "height: 509px"
-        rightBar.style = "height: 509px"
-        rightContainer.style = "height: 509"
-    } else if (window.innerWidth >= 2560) {
-        leftBar.style = "height: 1100px"
-        menu.style = "height: 1100px"
-        rightBar.style = "height: 1100px"
-        rightContainer.style = "height: 509px"
-    }
+    window.location.reload()
 }
 
 cartOn() {
