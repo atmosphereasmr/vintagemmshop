@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Scroll from 'scroll-js'
 
 
-const shirts = require('../../Data/patches.js')
+const boots = require('../../Data/patches.js')
 
 export default class Patches extends Component {
 
@@ -42,7 +42,7 @@ export default class Patches extends Component {
 
     componentDidMount() {
 
-        this.setState({ items: shirts.data, itemAmount: shirts.data.length }, () => {
+        this.setState({ items: boots.data, itemAmount: boots.data.length }, () => {
             console.log(this.state)
 
             if (window.innerWidth <= 425) {
