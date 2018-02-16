@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import '../Shirts/shirts.css'
 import { Link } from 'react-router-dom'
+import { FacebookShareButton, TwitterShareButton } from 'react-share'
 
 const shirts = require('../../Data/featured.js')
 
@@ -64,6 +65,12 @@ export default class FeaturedItem extends Component {
     render() {
         return (
             <div>
+                                <div className="shareOnFacebook">
+                    <FacebookShareButton children="Share" url="http://www.vintagemmshop.com" />
+                </div>
+                <div className="shareOnTwitter">
+                    <TwitterShareButton children="Tweet" url="http://www.vintagemmshop.com/" />
+                </div>
                 <div className="vinyl-home-container" id="home-container">
                     <div className="left-bar" id="left-bar">
                     </div>

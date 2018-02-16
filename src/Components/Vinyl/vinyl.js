@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
 import { choose, price, image } from '../../reducer'
 import Scroll from 'scroll-js'
+import { FacebookShareButton, TwitterShareButton } from 'react-share'
 
 
 const shirts = require('../../Data/vinyl.js')
@@ -50,7 +51,7 @@ class Vinyl extends Component {
             if (window.innerWidth <= 425) {
                 console.log('ayeeeee son')
                 const store = document.getElementById('right-container')
-                store.style = "height: 550px"
+                store.style = "height: 300px"
                 } else {
                     const leftBar = document.getElementById('left-bar')
                     const containerHeight = document.getElementById('right-container').clientHeight
@@ -263,6 +264,12 @@ edit(id, defaultName, defaultDescription, defaultSpecs, defaultPrice, defaultPic
 render() {
     return (
         <div>
+                            <div className="shareOnFacebook">
+                    <FacebookShareButton children="Share" url="http://www.vintagemmshop.com" />
+                </div>
+                <div className="shareOnTwitter">
+                    <TwitterShareButton children="Tweet" url="http://www.vintagemmshop.com/" />
+                </div>
             <div className="vinyl-home-container" id="home-container">
                 <div className="left-bar" id="left-bar">
                 </div>

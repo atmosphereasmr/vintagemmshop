@@ -3,6 +3,7 @@ import axios from 'axios'
 import '../Shirts/shirts.css'
 import { Link } from 'react-router-dom'
 import Scroll from 'scroll-js'
+import { FacebookShareButton, TwitterShareButton } from 'react-share'
 
 
 const shirts = require('../../Data/socks.js')
@@ -47,20 +48,20 @@ export default class Socks extends Component {
             if (window.innerWidth <= 425) {
                 console.log('ayeeeee son')
                 const store = document.getElementById('right-container')
-                store.style = "height: 400px"
-                } else {
-                    const leftBar = document.getElementById('left-bar')
-                    const containerHeight = document.getElementById('right-container').clientHeight
-                    const menu = document.getElementById('left-container')
-                    const rightBar = document.getElementById('right-bar')
-                    leftBar.style = `height: ${containerHeight}px`
-                    menu.style = `height: ${containerHeight}px`
-                    rightBar.style = `height: ${containerHeight}px`
-                }
+                store.style = "height: 300px"
+            } else {
+                const leftBar = document.getElementById('left-bar')
+                const containerHeight = document.getElementById('right-container').clientHeight
+                const menu = document.getElementById('left-container')
+                const rightBar = document.getElementById('right-bar')
+                leftBar.style = `height: ${containerHeight}px`
+                menu.style = `height: ${containerHeight}px`
+                rightBar.style = `height: ${containerHeight}px`
             }
-            
-        )
         }
+
+        )
+    }
 
     nameInput(e) {
         this.setState({ name_input: e }, () => console.log(this.state.name_input))
@@ -160,9 +161,10 @@ export default class Socks extends Component {
 
         if (window.innerWidth === 320 || window.innerWidth === 375 || window.innerWidth === 425) {
             var scroll = new Scroll(document.body);
-            scroll.to(0, 100, {easing: 'easeInOutCubic', duration: 0}).then(function () {
-               console.log('reeeee')
-            })}
+            scroll.to(0, 100, { easing: 'easeInOutCubic', duration: 0 }).then(function () {
+                console.log('reeeee')
+            })
+        }
 
         const items = document.getElementsByName("item-tag")
         const chosenItem = document.getElementById("chosen-item")
@@ -193,7 +195,7 @@ export default class Socks extends Component {
             const home = document.getElementById('home-container')
             home.style = "height: 900px"
         }
-         else if (window.innerWidth >= 2560) {
+        else if (window.innerWidth >= 2560) {
             leftBar.style = "height: 1300px"
             menu.style = "height: 1300px"
             rightBar.style = "height: 1300px"
@@ -258,6 +260,12 @@ export default class Socks extends Component {
     render() {
         return (
             <div>
+                <div className="shareOnFacebook">
+                    <FacebookShareButton children="Share" url="http://www.vintagemmshop.com" />
+                </div>
+                <div className="shareOnTwitter">
+                    <TwitterShareButton children="Tweet" url="http://www.vintagemmshop.com/" />
+                </div>
                 <div className="vinyl-home-container" id="home-container">
                     <div className="left-bar" id="left-bar">
                     </div>

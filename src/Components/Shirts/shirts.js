@@ -6,9 +6,6 @@ import { connect } from "react-redux";
 import { choose, price, image } from '../../reducer'
 import Scroll from 'scroll-js'
 import { FacebookShareButton, TwitterShareButton } from 'react-share'
-import { DocumentMeta } from "react-document-meta";
-import { Helmet } from 'react-helmet'
-import MetaTags from 'react-meta-tags';
 
 
 const shirts = require('../../Data/data.js')
@@ -55,7 +52,7 @@ class Shirts extends Component {
             if (window.innerWidth <= 425) {
                 console.log('ayeeeee son')
                 const store = document.getElementById('right-container')
-                store.style = "height: 800px"
+                store.style = "height: 400px"
             } else {
                 const leftBar = document.getElementById('left-bar')
                 const containerHeight = document.getElementById('right-container').clientHeight
@@ -220,41 +217,7 @@ class Shirts extends Component {
     }
 
     goBack() {
-        const chosenItem = document.getElementById("chosen-item")
-        const chosenDescription = document.getElementById("chosen-description")
-        const chosenBuyBox = document.getElementById("chosen-buy-box")
-        const goBackButton = document.getElementById('go-back-button')
-        const items = document.getElementsByName("item-tag")
-        const rightContainer = document.getElementById('right-container')
-        const goBackButton2 = document.getElementById('go-back-button-2')
-
-        chosenItem.className = "chosen-item-off"
-        chosenDescription.className = "chosen-description-off"
-        chosenBuyBox.className = "chosen-buy-box-off"
-        goBackButton.className = "go-back-button-off"
-        goBackButton2.className = "go-back-button-off"
-        for (var i = 0; i < items.length; i++) {
-            items[i].className = "item-1"
-        }
-
-        const leftBar = document.getElementById('left-bar')
-        const containerHeight = document.getElementById('right-container').clientHeight
-        const menu = document.getElementById('left-container')
-        const rightBar = document.getElementById('right-bar')
-        // if (window.innerWidth <= 320 || window.innerWidth <= 375 || window.innerWidth <= 425) {
-        // leftBar.style = "height: 3100px"
-        // menu.style = "height: 3100px"
-        // rightBar.style = "height: 3100px"
-        // }
-        //  if (window.innerWidth >= 425 && window.innerWidth < 2560) {
-        //     leftBar.style = "height: 1046px"
-        //     menu.style = "height: 1046px"
-        //     rightBar.style = "height: 1046px"
-        // } else if (window.innerWidth >= 2560) {
-        //     leftBar.style = "height: 1100px"
-        //     menu.style = "height: 1100px"
-        //     rightBar.style = "height: 1100px"
-        // }
+        window.location.reload()
     }
 
     cartOn() {
@@ -303,24 +266,11 @@ class Shirts extends Component {
     render() {
         return (
             <div>
-                <MetaTags>
-                    <title>Vintage Marilyn Manson Shop</title>
-                    <meta name="description" content="Vintage and Rare Marilyn Manson T-Shirts, Vinyl Records, Posters and much more! Your source for all things Marilyn Manson, from The Spooky Kids to Eat Me, Drink Me!" />
-                    <meta property="og:title" content="Yes" />
-                    <meta property="og:description" content="Yes" />
-                    <meta property="og:image" content="https://www.petmd.com/sites/default/files/petmd-cat-happy-10.jpg" />
-                    <meta property="og:url" content="vintagemmshop.com" />
-                    <meta property="og:type" content="Shop" />
-                    <meta property="og:site_name" content="Vintage Marilyn Manson Shop" />
-
-
-
-                </MetaTags>
                 <div className="shareOnFacebook">
-                    <FacebookShareButton children="Share on Facebook" url="http://www.vintagemmshop.com" />
+                    <FacebookShareButton children="Share" url="http://www.vintagemmshop.com" />
                 </div>
                 <div className="shareOnTwitter">
-                    <TwitterShareButton children="Share on Twitter" url="http://www.vintagemmshop.com/" />
+                    <TwitterShareButton children="Tweet" url="http://www.vintagemmshop.com/" />
                 </div>
                 <div className="vinyl-home-container" id="home-container">
                     <div className="left-bar" id="left-bar">

@@ -3,6 +3,7 @@ import axios from 'axios'
 import '../Shirts/shirts.css'
 import { Link } from 'react-router-dom'
 import Scroll from 'scroll-js'
+import { FacebookShareButton, TwitterShareButton } from 'react-share'
 
 
 const boots = require('../../Data/patches.js')
@@ -48,7 +49,7 @@ export default class Patches extends Component {
             if (window.innerWidth <= 425) {
                 console.log('ayeeeee son')
                 const store = document.getElementById('right-container')
-                store.style = "height: 800px"
+                store.style = "height: 400px"
                 } else {
                     const leftBar = document.getElementById('left-bar')
                     const containerHeight = document.getElementById('right-container').clientHeight
@@ -260,6 +261,12 @@ edit(id, defaultName, defaultDescription, defaultSpecs, defaultPrice, defaultPic
 render() {
     return (
         <div>
+                            <div className="shareOnFacebook">
+                    <FacebookShareButton children="Share" url="http://www.vintagemmshop.com" />
+                </div>
+                <div className="shareOnTwitter">
+                    <TwitterShareButton children="Tweet" url="http://www.vintagemmshop.com/" />
+                </div>
             <div className="vinyl-home-container" id="home-container">
                 <div className="left-bar" id="left-bar">
                 </div>
