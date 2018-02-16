@@ -596,7 +596,7 @@
 }
 
 .shareOnFacebook {
-    width: 3%;
+    width: 5%;
     height: 5%;
     position: fixed;
     top: 20%;
@@ -611,11 +611,11 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .shareOnTwitter {
-    width: 3%;
+    width: 5%;
     height: 5%;
     position: fixed;
     top: 25%;
@@ -629,7 +629,7 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     cursor: pointer;
 }
 
