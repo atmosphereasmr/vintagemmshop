@@ -7,6 +7,7 @@ import { choose, price, image } from '../../reducer'
 import Scroll from 'scroll-js'
 import { FacebookShareButton, TwitterShareButton } from 'react-share'
 import { DocumentMeta } from "react-document-meta";
+import { Helmet } from 'react-helmet'
 
 
 const shirts = require('../../Data/data.js')
@@ -299,11 +300,21 @@ class Shirts extends Component {
 
 
     render() {
-        {document.getElementsByTagName("meta")[1].content=this.state.chosen_name}
-        {document.getElementsByTagName("meta")[2].content=this.state.chosen_description}
-        {document.getElementsByTagName("meta")[3].content=this.state.chosen_pic}
         return (
             <div>
+                <Helmet>
+                    <title>Vintage Marilyn Manson Shop</title>
+                    <meta name="description" content="Vintage and Rare Marilyn Manson T-Shirts, Vinyl Records, Posters and much more! Your source for all things Marilyn Manson, from The Spooky Kids to Eat Me, Drink Me!" />
+                    <meta property="og:title" content="Yes" />
+                    <meta property="og:description" content="Yes" />
+                    <meta property="og:image" content="https://www.petmd.com/sites/default/files/petmd-cat-happy-10.jpg" />
+                    <meta property="og:url" content="vintagemmshop.com" />
+                    <meta property="og:type" content="Shop" />
+                    <meta property="og:site_name" content="Vintage Marilyn Manson Shop" />
+
+
+
+                </Helmet>
                 <div className="shareOnFacebook">
                     <FacebookShareButton children="Share on Facebook" url="http://www.vintagemmshop.com" />
                 </div>
