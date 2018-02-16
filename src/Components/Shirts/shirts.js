@@ -8,6 +8,7 @@ import Scroll from 'scroll-js'
 import { FacebookShareButton, TwitterShareButton } from 'react-share'
 import { DocumentMeta } from "react-document-meta";
 import { Helmet } from 'react-helmet'
+import MetaTags from 'react-meta-tags';
 
 
 const shirts = require('../../Data/data.js')
@@ -302,7 +303,7 @@ class Shirts extends Component {
     render() {
         return (
             <div>
-                <Helmet>
+                <MetaTags>
                     <title>Vintage Marilyn Manson Shop</title>
                     <meta name="description" content="Vintage and Rare Marilyn Manson T-Shirts, Vinyl Records, Posters and much more! Your source for all things Marilyn Manson, from The Spooky Kids to Eat Me, Drink Me!" />
                     <meta property="og:title" content="Yes" />
@@ -314,7 +315,7 @@ class Shirts extends Component {
 
 
 
-                </Helmet>
+                </MetaTags>
                 <div className="shareOnFacebook">
                     <FacebookShareButton children="Share on Facebook" url="http://www.vintagemmshop.com" />
                 </div>
